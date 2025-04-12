@@ -1,15 +1,7 @@
-import { useState } from 'react'
-import AnimatedList from './blocks/Components/AnimatedList/AnimatedList.jsx'
-import './App.css'
+import AppRoutes from "./routes";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  return <AppRoutes />;
+};
 
-  return (
-    <>
-      <AnimatedList/>
-    </>
-  )
-}
-
-export default App
+export default App;

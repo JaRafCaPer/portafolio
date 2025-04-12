@@ -1,64 +1,44 @@
 .navbar {
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 10px 24px;
+ background-color: #0F172A;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  height: 70px;
+}
+
+/* Evita que tape contenido */
+body {
+  padding-top: 70px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 8px 16px;
+    height: 64px;
   }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
+  body {
+    padding-top: 64px;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: white;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 6px 12px;
+    height: 60px;
   }
-  
-  .menu-icon {
-    font-size: 2rem;
-    cursor: pointer;
-    display: none;
+  body {
+    padding-top: 60px;
   }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-  }
-  
-  @media (max-width: 768px) {
-    .menu-icon {
-      display: block;
-    }
-  
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background: #333;
-      padding: 15px 0;
-    }
-  
-    .nav-links.open {
-      display: flex;
-    }
-  
-    .nav-links li {
-      text-align: center;
-      padding: 10px 0;
-    }
-  }
-  
+}

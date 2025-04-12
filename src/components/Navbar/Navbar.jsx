@@ -1,26 +1,29 @@
-import { Link } from "react-router-dom";
+import GooeyNav from "../../blocks/Components/GooeyNav/GooeyNav";
 import { useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+    const language = navigator.language.startsWith("es") ? "es" : "en";
+  const items = [
+    { label: language === "es" ? "Inicio" : "Home", href: "/" },
+    { label: language === "es" ? "Sobre mí" : "About", href: "/about" },
+    { label: language === "es" ? "Servicios" : "Services", href: "/services" },
+    { label: language === "es" ? "Contacto" : "Contact", href: "/contact" },
+  ];
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="logo">
-          Mi Portafolio
-        </Link>
-        <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
-          ☰
-        </div>
-        <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-          <li><Link to="/">Inicio</Link></li>
-          <li><Link to="/about">Sobre mí</Link></li>
-          <li><Link to="/services">Servicios</Link></li>
-          <li><Link to="/pricing">Precios</Link></li>
-          <li><Link to="/contact">Contacto</Link></li>
-        </ul>
+      <div >
+        <GooeyNav
+          items={items}
+          animationTime={600}
+          pCount={15}
+          minDistance={20}
+          maxDistance={42}
+          maxRotate={75}
+          colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+          timeVariance={300}
+        />
       </div>
     </nav>
   );
