@@ -1,18 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, lazy, Suspense, useRef } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 import "./Home.css";
 import heroImg from "../../assets/images/heroImg.png";
 import ParallaxSection from "../../Components/Common/ParallaxSection/ParallaxSection";
-import CircularGallery from "../../blocks/Components/CircularGallery/CircularGallery";
 import ScrollIndicator from "../../Components/Common/ScrollIndicator";
+import useParallaxEffect from "../../hooks/useParallaxEffect";
 
+
+
+const CircularGallery = lazy(() =>
+      import("../../blocks/Components/CircularGallery/CircularGallery")
+      );
 const Home = () => {
+  const bgRef = useRef(null);
+  const overlayRef = useRef(null);
+  const contentRef = useRef(null);
+  useParallaxEffect([bgRef, overlayRef, contentRef], [0.2, 0.4, 0.6]);
   const { language } = useContext(LanguageContext);
   return (
     <main className="home-page">
       <section className="hero-section" id="hero">
-        <div className="parallax-bg" />
-        <div className="hero-content">
+      <div ref={bgRef} className="parallax-bg" />
+        <div ref={overlayRef} className="parallax-overlay" />
+        <div ref={contentRef} className="hero-content">
           <div className="hero-left">
             <h1>
               {language === "es"
@@ -40,6 +50,7 @@ const Home = () => {
               src={heroImg}
               alt="Creative Developer"
               className="hero-image"
+              loading="lazy"
             />
           </div>
         </div>
@@ -52,7 +63,9 @@ const Home = () => {
         <h2>
           {language === "es" ? "Ejemplos de trabajo" : "Portfolio Samples"}
         </h2>
+        <Suspense fallback={<div>Loading...</div>}>
         <CircularGallery />
+        </Suspense>
       </section>
     </main>
   );
