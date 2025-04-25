@@ -1,5 +1,5 @@
 import "./Home.css";
-import heroImg from "../../assets/images/heroimg.png";
+import heroImg from "../../assets/images/heroImg.png";
 import ParallaxSection from "../../components/Common/ParallaxSection/ParallaxSection";
 import Stack from "../../blocks/Components/Stack/Stack";
 
@@ -40,7 +40,7 @@ const Home = () => {
 <ParallaxSection />
       <section className="carousel-section">
         <h2>{language === "es" ? "Ejemplos de trabajo" : "Portfolio Samples"}</h2>
-        <Stack/>
+        
       </section>
     </main>
   );
