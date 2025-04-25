@@ -5,8 +5,8 @@ import Services from "../pages/Services/Services";
 import Contact from "../pages/Contact/Contact";
 import Pricing from "../pages/Pricing/Pricing";
 import NotFound from "../pages/NotFound/NotFound";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
+import Navbar from "../Components/Navbar/Navbar";
+import Footer from "../Components/Footer/Footer";
 import SplashCursor from "../blocks/Animations/SplashCursor/SplashCursor";
 
 const AppRoutes = () => {
