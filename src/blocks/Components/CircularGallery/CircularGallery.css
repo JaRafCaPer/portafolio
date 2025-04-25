@@ -8,6 +8,15 @@
   overflow: hidden;
   cursor: grab;
 }
+.circular-gallery-wrapper {
+  display: inline-block;            
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.circular-gallery-wrapper:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
 
 .circular-gallery:active {
   cursor: grabbing;
