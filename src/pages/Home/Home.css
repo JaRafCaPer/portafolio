@@ -9,7 +9,7 @@
   color: var(--color-light);
 }
 
-/* Hero Section */
+
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -30,7 +30,7 @@
 .parallax-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 255, 255, 0.1); /* Cian translúcido */
+  background: rgba(0, 255, 255, 0.1); 
   z-index: 1;
 }
 

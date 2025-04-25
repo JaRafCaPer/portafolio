@@ -56,9 +56,6 @@ const Home = () => {
         </div>
         <ScrollIndicator targetId="showcase" />
       </section>
-
-      <ParallaxSection />
-
       <section className="carousel-section" id="showcase">
         <h2>
           {language === "es" ? "Ejemplos de trabajo" : "Portfolio Samples"}
@@ -67,6 +64,7 @@ const Home = () => {
         <CircularGallery />
         </Suspense>
       </section>
+      
     </main>
   );
 };
