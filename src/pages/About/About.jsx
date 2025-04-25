@@ -1,4 +1,4 @@
-import ElasticSlider from "../../blocks/components/ElasticSlider/ElasticSlider";
+import ElasticSlider from "../../blocks/Components/ElasticSlider/ElasticSlider";
 import "./About.css";
 
 const About = () => {
